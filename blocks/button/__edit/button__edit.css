@@ -1,20 +1,20 @@
-.button_type_edit {
+.button__edit {
     margin-top: 15px;
     width: 24px;
     height: 24px;
-    background: transparent url("../../../images/edit-button/edit-button.svg") no-repeat center;
+    background: transparent url("../../../images/button/__edit/edit-button.svg") no-repeat center;
     border: 1px solid #FFFFFF;
 }
 
 @media screen and (min-width: 501px) {
-    .button_type_edit:hover {
+    .button__edit:hover {
         opacity: 0.6;
         transition: opacity 0.1s linear;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .button_type_edit {
+    .button__edit {
         margin-top: 0;
         align-self: center;
         background-size: 8px 8px;
