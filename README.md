@@ -11,7 +11,7 @@
 
 **GitHub Pages**
 
-* [Ссылка на задеплоенный проект](https://alexander-kuznetsov.github.io/mesto-project/index.html)
+* [Ссылка на задеплоенный проект](https://alexander-kuznetsov.github.io/mesto/index.html)
 
 **GitHub**
 
