@@ -43,18 +43,35 @@
 </footer>
 
 
-<div class="popup popup_form">
+<div class="popup popup_profile">
     <div class="popup__container">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form name="profile" class="popup__form">
             <fieldset class="popup__form-name">
                 <label class="popup__label">
-                    <input name="firstFormInput" class="popup__input" type="text" required>
+                    <input name="firstFormInput" class="popup__input" type="text" placeholder="Полное имя" required>
                 </label>
                 <label class="popup__label">
-                    <input name="secondFormInput" class="popup__input" type="text" required>
+                    <input name="secondFormInput" class="popup__input" type="text" placeholder="Профессия" required>
                 </label>
                 <button type="submit" class="button button__save">Сохранить</button>
+            </fieldset>
+        </form>
+        <button type="button" class="button button__close"></button>
+    </div>
+</div>
+<div class="popup popup_card">
+    <div class="popup__container">
+        <h3 class="popup__title">Новое место</h3>
+        <form name="profile" class="popup__form">
+            <fieldset class="popup__form-name">
+                <label class="popup__label">
+                    <input name="firstFormInput" class="popup__input" type="text" placeholder="Название" required>
+                </label>
+                <label class="popup__label">
+                    <input name="secondFormInput" class="popup__input" type="text" placeholder="Ссылка на карточку" required>
+                </label>
+                <button type="submit" class="button button__save">Создать</button>
             </fieldset>
         </form>
         <button type="button" class="button button__close"></button>
@@ -67,6 +84,7 @@
         <button type="button" class="button button__close"></button>
     </figure>
 </div>
+<script src="scripts/initial-сards.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
