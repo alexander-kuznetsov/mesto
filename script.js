@@ -1,8 +1,10 @@
 /*-------------------Variables--------------------*/
+const page = document.querySelector('.page');
+const popups = document.querySelectorAll('.popup');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const profilePopup = document.querySelector('.popup_profile');
-const cardPopup = document.querySelector('.popup_card');
+const profilePopup = document.querySelector('.popup_type_profile');
+const cardPopup = document.querySelector('.popup_type_card');
 
 const profilePopupInputs = profilePopup.querySelectorAll('.popup__input');
 const inputNameElem = getPopupInput(profilePopupInputs, 'firstFormInput');
@@ -12,7 +14,7 @@ const cardPopupInputs = cardPopup.querySelectorAll('.popup__input');
 const inputPlace = getPopupInput(cardPopupInputs, 'firstFormInput');
 const inputLink = getPopupInput(cardPopupInputs, 'secondFormInput');
 
-const imagePopup = document.querySelector('.popup_image');
+const imagePopup = document.querySelector('.popup_type_image');
 const popupImageElem = imagePopup.querySelector('.popup__image');
 const popupImageCaptionElem = imagePopup.querySelector('.popup__image-caption');
 const editButton = document.querySelector('.button__edit');
@@ -28,6 +30,12 @@ function openPopup(popup) {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+}
+
+function findOpened() {
+    return Array.from(popups).find(popup => {
+        return popup.classList.contains('popup_opened');
+    });
 }
 
 function submitProfilePopupHandler(evt) {
@@ -118,10 +126,26 @@ closeButtons.forEach(button => {
        closePopup(evt.target.closest('.popup'))
    });
 });
-
 addButton.addEventListener('click', _ => {
     openPopup(cardPopup);
 });
+page.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+        const openedPopup = findOpened();
+        if (openedPopup !== null && openedPopup !== undefined) {
+            closePopup(openedPopup);
+        }
+    }
+})
+
+popups.forEach(popup => {
+    popup.addEventListener('click', evt => {
+        if (evt.target.classList.contains('popup')) {
+            closePopup(popup);
+        }
+    })
+});
+
 /*----------------------------------Rendering--------------------------------------------*/
 initialCards.forEach(item => {
     addPlace(
