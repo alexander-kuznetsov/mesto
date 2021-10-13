@@ -1,3 +1,7 @@
+import './pages/index.css';
+
+import { changeButtonState } from "./validation";
+import { checkInputValidity } from "./validation";
 /*-------------------Variables--------------------*/
 const page = document.querySelector('.page');
 const popups = document.querySelectorAll('.popup');
@@ -20,6 +24,7 @@ const popupImageCaptionElem = imagePopup.querySelector('.popup__image-caption');
 const editButton = document.querySelector('.button__edit');
 const closeButtons = document.querySelectorAll('.button__close');
 const addButton = document.querySelector('.button__add');
+const saveButton = document.querySelector('.button__save');
 const cardTemplate = document.querySelector('#place-card').content;
 const placesElem = document.querySelector('.places');
 
@@ -63,8 +68,11 @@ function getPopupInput(popupInputs, inputName) {
 
 function openProfilePopup() {
     inputNameElem.value = profileTitle.textContent;
+    checkInputValidity(profilePopup, inputNameElem);
     inputJobElem.value = profileSubtitle.textContent;
+    checkInputValidity(profilePopup, inputJobElem);
 
+    changeButtonState([inputNameElem, inputJobElem], saveButton);
     openPopup(profilePopup);
 }
 
@@ -123,7 +131,7 @@ editButton.addEventListener('click', openProfilePopup);
 
 closeButtons.forEach(button => {
    button.addEventListener('click',evt => {
-       closePopup(evt.target.closest('.popup'))
+       closePopup(evt.target.closest('.popup'));
    });
 });
 addButton.addEventListener('click', _ => {
@@ -147,8 +155,10 @@ popups.forEach(popup => {
 });
 
 /*----------------------------------Rendering--------------------------------------------*/
-initialCards.forEach(item => {
-    addPlace(
-        createPlace(item.name, item.link)
-    );
-});
+// initialCards.forEach(item => {
+//     addPlace(
+//         createPlace(item.name, item.link)
+//     );
+// });
+
+
