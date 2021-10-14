@@ -4,7 +4,7 @@ const presets = [
             edge: '17',
             ie: '11',
             firefox: '50',
-            chrome: '64',
+            chrome: '92',
             safari: '11.1'
         },
 
