@@ -1,5 +1,5 @@
 import {createPlace, placesElem} from "./card";
-import {profileSubtitle, profileTitle} from "../index";
+import {profileSubtitle, profileTitle} from "./index";
 
 export const profilePopup = document.querySelector('.popup_type_profile');
 export const imagePopup = document.querySelector('.popup_type_image');

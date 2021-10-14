@@ -1,6 +1,6 @@
-import './pages/index.css';
+import '../pages/index.css';
 
-import {changeButtonState, checkInputValidity, enableValidation} from "./components/validation";
+import {changeButtonState, checkInputValidity, enableValidation} from "./validation";
 import {
     allPopups, cardPopup,
     close,
@@ -8,7 +8,7 @@ import {
     closeOnOverlay,
     getPopupInput,
     open, profilePopup, submitPopupHandler
-} from "./components/modal";
+} from "./modal";
 
 const page = document.querySelector('.page');
 export const profileTitle = document.querySelector('.profile__title');
